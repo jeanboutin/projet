@@ -1,0 +1,76 @@
+create table `passe` (
+
+`idpasse` int(11) NOT NULL auto_increment,
+
+`nom` varchar(30) NOT NULL,
+
+`cheminvideo` text NOT NULL,
+
+`dateapparition` date NOT NULL,
+
+`niv` varchar(30) NULL,
+primary key(`idpasse`)
+,
+key `niv_fk`(`niv`),
+constraint `niveau_fk` foreign key (`niv`) references `niveau`(`niv`) on delete no action on update no action
+);
+ 
+
+create table `niveau` (
+`idniveau` int(11) NOT NULL auto_increment,
+
+`niv` varchar(30) NULL,
+primary key(`idniveau`)
+
+);
+ 
+
+create table `evenement`(
+`idevenement` int(11) NOT NULL auto_increment,
+
+`nom` varchar(30) NOT NULL,
+`dateevenement` date NOT NULL,
+`description` text NOT NULL,
+`adresse` varchar (100) NOT NULL,
+`cheminImage` text NOT NULL,
+`passe` boolean NULL,
+primary key(`idevenement`),
+key `cheminImage_fk`(`cheminImage`),
+constraint `cheminImage_fk` foreign key (`cheminImage`) references `photos`(`cheminImage`) on delete no action on update no action
+);
+
+create table `photos`(
+`idPhotos` int(11) NOT NULL auto_increment,
+`cheminImage` text NOT NULL,
+primary key (`idPhotos`)
+);
+
+create table `membre`(
+`idMembre`  int(11) NOT NULL auto_increment,
+
+`prenom` varchar(30) NOT NULL,
+`nom` varchar(30) NOT NULL,
+`description` text NOT NULL,
+`photoChemin` text NOT NULL,
+primary key(`idMembre`)
+);
+
+create table `roles`(
+`idMembre`  int(11) NOT NULL auto_increment,
+
+`role` varchar(30) NOT NULL,
+primary key (`idMembre`),
+key `role_fk`(`role`),
+constraint `role_fk` foreign key (`role`) references `roles`(`role`) on delete no action on update no action
+);
+
+create table `musique`(
+`idMusique`  int(11) NOT NULL auto_increment,
+
+`titre` varchar(30) NOT NULL,
+`artiste` varchar(30) NOT NULL,
+`nbrlikes` int(3) NULL,
+primary key(`idMusique`)
+)
+
+
