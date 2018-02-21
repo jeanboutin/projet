@@ -18,6 +18,16 @@ public class Membre {
         this.prenom=prenom;
         this.color=color;
     }
+    /*TODO*/
+    public static final String SQL_TABLE_NAME = "membre";
+    public static final String KEY_ID ="id";
+    public static final String KEY_PRENOM="prenom";
+    public static final String KEY_NOM ="nom";
+    public static final String KEY_DESCRIPTION="description";
+    public static final String KEY_PHOTOCHEMIN="text";
+
+
+
     public String getRole() {return role;}
     public void setRole(String role) {this.role = role;}
     public String getDescription() {return description;}

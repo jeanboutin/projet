@@ -9,6 +9,15 @@ public class Passe {
     private String niveau;
     private int color;
 
+    /*TODO*/
+    public static final String SQL_TABLE_NAME = "passe";
+    public static final String KEY_IDPASSE ="idPasse";
+    public static final String KEY_NOM="nom";
+    public static final String KEY_CHEMINVIDEO ="cheminVideo";
+    public static final String KEY_DATEAPPARITION="dateAppparition";
+    public static final String KEY_NIV="niv";
+
+
     public Passe (String nom, String niveau, int color){
         this.nom=nom;
         this.niveau=niveau;
